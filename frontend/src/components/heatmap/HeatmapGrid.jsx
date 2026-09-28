@@ -1,0 +1,3 @@
+import { junctions } from '../../constants/junctions'
+import { congestionColor } from '../../utils/congestionColors'
+export default function HeatmapGrid() { return <div className="grid grid-cols-6 gap-1.5">{junctions.concat(junctions).map((j, i) => <div key={`${j.id}-${i}`} title={j.name} className="group relative aspect-square rounded-md transition hover:scale-110" style={{ backgroundColor: congestionColor(j.level), opacity: 0.35 + ((i * 7) % 5) / 10 }}><span className="absolute inset-0 grid place-items-center text-[9px] font-bold text-white opacity-0 transition group-hover:opacity-100">{j.speed}</span></div>)}</div> }

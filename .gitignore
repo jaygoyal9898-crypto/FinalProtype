@@ -1,0 +1,39 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Environment
+.env
+
+# Database
+data/traffic.db
+
+# Generated analysis
+data/history/*
+data/outputs/*
+
+# Uploaded/generated videos
+data/uploads/*
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+
+# YOLO training outputs
+runs/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+# Backup ZIP files
+*.zip

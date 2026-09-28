@@ -1,0 +1,1 @@
+export default function HeatmapLegend() { return <div className="mt-4 flex items-center justify-between text-[10px] font-semibold text-slate-400"><span>Low</span><div className="mx-3 h-1.5 flex-1 rounded-full bg-gradient-to-r from-teal-400 via-yellow-400 to-rose-500"/><span>Severe</span></div> }

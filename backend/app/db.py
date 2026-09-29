@@ -28,3 +28,25 @@ class Analysis(Base):
 
 def init_db():
     Base.metadata.create_all(bind=engine)
+    
+def cleanup_stale_analyses():
+    """Mark analyses left in processing state by a previous server run as failed."""
+    db = SessionLocal()
+
+    try:
+        stale = (
+            db.query(Analysis)
+            .filter(Analysis.status == "processing")
+            .all()
+        )
+
+        for analysis in stale:
+            analysis.status = "failed"
+            analysis.error = "Server stopped before analysis completed."
+
+        db.commit()
+
+        return len(stale)
+
+    finally:
+        db.close()

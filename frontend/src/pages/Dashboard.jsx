@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 
 import { apiFetch, API_BASE_URL } from "../api/client";
+import { getCurrentAnalysis } from "../api/traffic";
 
 function makeUrl(path) {
   if (!path) return "";

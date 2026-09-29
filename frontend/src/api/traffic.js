@@ -1,7 +1,13 @@
 import { apiFetch } from "./client";
 
 export async function getCurrentAnalysis() {
-  return apiFetch("/current-analysis");
+  const response = await fetch("/current-analysis");
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch current analysis: ${response.status}`);
+  }
+
+  return response.json();
 }
 
 export async function startLive() {
